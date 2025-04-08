@@ -1,0 +1,354 @@
+/* General */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #5a00ff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    background: url('../imgs/background.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.button {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button.play {
+    background-color: #5a00ff;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button.play:hover {
+    background-color: #4500cc;
+    transform: scale(1.1);
+}
+
+.button.guide {
+    background-color: transparent;
+    border: 2px solid #5a00ff;
+    color: #5a00ff;
+}
+
+.button.guide:hover {
+    background-color: #5a00ff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Tienda */
+body.tienda {
+    background: url('../imgs/bg-tienda.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Aplicando una capa semitransparente sobre el fondo de tienda.html */
+body.tienda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: -1; /* Asegura que la capa esté detrás del contenido */
+}
+
+/* Contenedor de vehículos */
+.tienda-content {
+    margin-top: 6rem;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de vehículos (agregando un cuadro grande) */
+.vehicles-container {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Contenedores de vehículos (arriba y abajo) */
+#vehicles-container-top,
+#vehicles-container-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Tarjeta del vehículo */
+.vehicle-item {
+    background-color: rgba(20, 20, 20, 0.9);
+    border-radius: 10px;
+    padding: 0.8rem;
+    width: 180px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-item:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Detalles del vehículo */
+.vehicle-details {
+    margin-top: 0.5rem;
+}
+
+.vehicle-details p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.vehicle-details button {
+    margin-top: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    background-color: #5a00ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.vehicle-details button:hover {
+    background-color: #4500cc;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .content {
+        max-width: 100%;
+    }
+    
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    .content {
+        max-width: 80%;
+        text-align: center;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .vehicle-item {
+        width: 100%;
+    }
+
+    #vehicles-container-top,
+    #vehicles-container-bottom {
+        justify-content: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+/* Estilo para el cuadro donde se muestran los mensajes de la guía */
+.definition-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    color: #333;
+}
+
+.definition-box h1,
+.definition-box h2 {
+    color: #5a00ff; /* Color para los títulos */
+}
+
+.definition-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Lista dentro del cuadro de la guía */
+.definition-box ul {
+    padding-left: 1.5rem;
+}
+
+.definition-box ul li {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0.8rem 0;
+}
+
+.definition-box ul li i {
+    color: #5a00ff; /* Color para los iconos */
+    margin-right: 0.5rem;
+}
+
+/* Optimización para el logo */
+.server-logo {
+    width: 350px !important;
+    height: auto;
+    margin-right: 5rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    right: -40rem;
+    transform: translateY(-50%);
+    background-color: transparent !important; /* Asegura que el fondo sea transparente */
+}
+
+@media screen and (max-width: 480px) {
+    .server-logo {
+        width: 250px !important; /* Reducir tamaño en pantallas pequeñas */
+        right: -30rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}

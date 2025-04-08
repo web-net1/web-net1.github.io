@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Infernus",
+        "precio": "4.00",
+        "imagen": "../imgs/infernus.jpg"
+    },
+    {
+        "nombre": "Hotring Racer",
+        "precio": "5.00",
+        "imagen": "../imgs/hotringr.jpg"
+    },
+    {
+        "nombre": "Comet",
+        "precio": "2.00",
+        "imagen": "../imgs/comet.jpg"
+    },
+    {
+        "nombre": "Cheetah",
+        "precio": "3.5",
+        "imagen": "../imgs/cheetah.jpg"
+    },
+    {
+        "nombre": "Bullet",
+        "precio": "2.8",
+        "imagen": "../imgs/bullet.jpg"
+    },
+    {
+        "nombre": "Sultan",
+        "precio": "1.00",
+        "imagen": "../imgs/sultan.jpg"
+    }
+]
